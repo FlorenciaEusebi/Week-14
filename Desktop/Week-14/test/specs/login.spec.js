@@ -64,22 +64,20 @@ describe ('Login page testing', () => {
   describe('Elements to be displayed', () => {
 
     it('Verify botImg to be displayed', async () =>{
+      await LoginPage.open();
       await expect(LoginPage.botImg).toBeDisplayed();
     });
 
     it ('Verify login logo', async () => {
+      await LoginPage.open();
       await expect(LoginPage.loginLogo).toBeDisplayed();
     });
-  });
+    // describe('Checking log in content with success login', () => {
 
-  describe('Checking log in content with success login', () => {
-
-    it('Img content', async () => {
+    it ('Img content', async () => {
       await LoginPage.login('standard_user','secret_sauce');
       const imgSrc = await $('#item_4_img_link > img').getAttribute('src');
       await expect(imgSrc).toBe('/static/media/sauce-backpack-1200x1500.34e7aa42.jpg')
     });
   });
-
-
-})
+});
