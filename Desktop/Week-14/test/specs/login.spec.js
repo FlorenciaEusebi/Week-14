@@ -72,7 +72,6 @@ describe ('Login page testing', () => {
       await LoginPage.open();
       await expect(LoginPage.loginLogo).toBeDisplayed();
     });
-    // describe('Checking log in content with success login', () => {
 
     it ('Img content', async () => {
       await LoginPage.login('standard_user','secret_sauce');
