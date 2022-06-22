@@ -1,4 +1,4 @@
-class cartCheckoutTwoPage {
+class CartCheckoutTwoPage {
 
   get summaryInfoDiv () { return $('.summary_info') };
   get summarySubtotalLabel () { return $('.summary_subtotal_label') };

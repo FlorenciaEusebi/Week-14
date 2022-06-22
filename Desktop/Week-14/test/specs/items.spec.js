@@ -33,17 +33,17 @@ describe ('Login page testing', () => {
     it('Checking Img content', async () => {
       const imgSrc = await $('.inventory_details_img_container > img').getAttribute('src');
       await expect(imgSrc).toBe('/static/media/sauce-backpack-1200x1500.34e7aa42.jpg')
-    })
+    });
 
     it('Checking description container', async () => {
       const inventoryContainer = await $('.inventory_details_desc_container');
       await expect(inventoryContainer).toBeExisting();
-    })
+    });
 
     it('Checking add button is clickable', async () => {
       const addBtn = await $('#add-to-cart-sauce-labs-backpack');
       await expect (addBtn).toBeClickable();
-    })
+    });
 
     // it('Checking remove button is clickable', async () => {
     //   const removeBtn = await $('#remove-sauce-labs-backpack');
@@ -53,7 +53,7 @@ describe ('Login page testing', () => {
     it('Checking back to products button is clickable', async () => {
       const backBtn = await $('#back-to-products');
       await expect (backBtn).toBeClickable();
-    })
-  })
+    });
+  });
 
 })

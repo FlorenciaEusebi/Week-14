@@ -14,4 +14,4 @@ class CartCheckoutOnePage {
  }
 }
 
-module.exports = new CartCheckoutOnePage ();
+module.exports = new CartCheckoutOnePage();
