@@ -19,12 +19,16 @@ describe ('Cart page testing', () => {
 
   describe ('Cart content page', () => {
     it ('Checking item to be present in cart', async () => {
+      await LoginPage.open();
+      await LoginPage.login('standard_user','secret_sauce');
+      await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
       await InventoryPage.backpackAdd.click();
-      await CartPage.checkoutBtn.click();
-      await expect(InventoryPage.cartInventoryItemName).toBeDisplayed();
+      await expect(CartPage.cartInventoryItemName).toBeDisplayed();
+      // await CartPage.checkoutBtn.click();
     });
-
+    
     it ('Check cart quantity number to be present', async() => {
+      await InventoryPage.cartLink.click();
       const cartQuantity = await $('.cart_quantity');
       await expect(cartQuantity).toBePresent();
     });

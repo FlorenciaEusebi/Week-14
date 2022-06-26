@@ -5,10 +5,6 @@ class CheckoutCompletePage {
   get imgComplete () { return $('#checkout_complete_container > img') };
   get backBtn () { return $('#back-to-products') };
 
-  open () {
-    return browser.url('https://www.saucedemo.com/checkout-complete.html');
-  }
-
 }
 
 module.exports = new CheckoutCompletePage();

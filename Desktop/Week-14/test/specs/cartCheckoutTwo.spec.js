@@ -11,6 +11,7 @@ describe ('Cart second step checkout', () => {
     await LoginPage.open();
     await LoginPage.login('standard_user','secret_sauce');
     await InventoryPage.backpackAdd.click();
+    await InventoryPage.cartLink.click();
     await CartPage.checkoutBtn.click();
     await CartCheckoutOnePage.fillCheckoutBoxes('Name','LastName','2000');
     await CartCheckoutOnePage.continueBtn.click();
@@ -19,23 +20,23 @@ describe ('Cart second step checkout', () => {
   describe('Testing the information displayed', () => {
 
     it('Checking summary information div to exist', async() => {
-      await expect(summaryInfoDiv).toBeDisplayed();
+      await expect(CartCheckoutTwoPage.summaryInfoDiv).toBeDisplayed();
     });
 
     it('Checking summary subtotal label to contain text', async () => {
-      await expect(cartCheckoutTwoPage.summarySubtotalLabel).toHaveTextContaining('Item total:');
+      await expect(CartCheckoutTwoPage.summarySubtotalLabel).toHaveTextContaining('Item total:');
     });
 
     it('Checking summary summary tax label to contain text', async () => {
-      await expect(cartCheckoutTwoPage.summaryTaxLabel).toHaveTextContaining('Tax:');
+      await expect(CartCheckoutTwoPage.summaryTaxLabel).toHaveTextContaining('Tax:');
     });
 
     it('Checking summary summary total label to contain text', async () => {
-      await expect(cartCheckoutTwoPage.summaryTotalLabel).toHaveTextContaining('Total:');
+      await expect(CartCheckoutTwoPage.summaryTotalLabel).toHaveTextContaining('Total:');
     });
 
     it('Checking finish button to be clickable', async () => {
-      await expect(cartCheckoutTwoPage.finishBtn).toBeClickable();
+      await expect(CartCheckoutTwoPage.finishBtn).toBeClickable();
     })
 
   });

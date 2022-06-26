@@ -9,14 +9,6 @@ class ItemsPage {
   get backBtn () { return $('#back-to-products')}
 
   //Methods
-  open () {
-    return browser.url('https://www.saucedemo.com/inventory-item.html?id=4');
-  }
-  async login(username, password) {
-    await this.setUsername(username);
-    await this.setPassword(password);
-    await this.btnLogin.click();
-  }
   async clickItemLink (){
     await this.itemLink.click();
   }

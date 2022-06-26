@@ -9,10 +9,11 @@ const CheckoutCompletePage = require('../pageobjects/checkoutComplete.page')
 describe('testing checkout complete page', () => {
 
   beforeAll('Open checkout complete page', async() => {
-    
+
     await LoginPage.open();
     await LoginPage.login('standard_user','secret_sauce');
     await InventoryPage.backpackAdd.click();
+    await InventoryPage.cartLink.click();
     await CartPage.checkoutBtn.click();
     await CartCheckoutOnePage.fillCheckoutBoxes('Name','LastName','2000');
     await CartCheckoutOnePage.continueBtn.click();
@@ -26,7 +27,7 @@ describe('testing checkout complete page', () => {
     });
 
     it ('Check text to have class', async () => {
-      await expect (CheckoutCompletePage.textComplete).toHaveElementClass('.complete-text');
+      await expect (CheckoutCompletePage.textComplete).toHaveElementClass('complete-text');
     });
 
     it ('Check Img to be displayed', async () => {

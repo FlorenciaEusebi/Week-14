@@ -28,7 +28,8 @@ class InventoryPage {
   get inventoryPrice () { return $('.inventory_item_price')}
 
   get menuBtn () { return $('#react-burger-menu-btn')}
-  get cartIcon () { return $('#shopping_cart_container')}
+  // get cartIcon () { return $('#shopping_cart_container')}
+  get cartLink () { return $('#shopping_cart_container > a')}
 
   get spanImg () { return $('.peek')}
 
